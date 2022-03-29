@@ -151,10 +151,15 @@ export class APL extends SkillResponsePart<APLProps> {
 
   private registerUserAgent() {
     if (!APL.packageVersion) {
-      const packageInfo = __dirname.includes('dist')
-        ? require('../../../../../package.json')
-        : require('../../../../package.json');
-      APL.packageVersion = `${packageInfo.name}/${packageInfo.version}`;
+      try {
+        const packageInfo = __dirname.includes('dist')
+          ? require('../../../../../package.json')
+          : require('../../../../../package.json');
+        APL.packageVersion = `${packageInfo.name}/${packageInfo.version}`;
+
+      } catch {
+        APL.packageVersion = "alexa-react/1.0.2"
+      }
       UserAgentManager.registerComponent(APL.packageVersion);
     }
   }
