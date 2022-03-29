@@ -65,7 +65,7 @@ describe('responses', () => {
       );
       expect(responseBuilder.addDirective).toHaveBeenCalledTimes(1);
       expect(UserAgentManager.registerComponent).toHaveBeenCalledTimes(1);
-      expect(UserAgentManager.registerComponent).toHaveBeenCalledWith(expect.stringContaining('ask-sdk-jsx-for-apl'));
+      expect(UserAgentManager.registerComponent).toHaveBeenCalledWith(expect.stringContaining('alexa-react'));
       expect(getImportDefinition()).toEqual({
         "name": "alexa-layouts",
         "version": "1.1.0"

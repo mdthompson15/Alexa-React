@@ -133,7 +133,7 @@ export class APL extends SkillResponsePart<APLProps> {
     const imports = uniqBy(this.imports, (i) => i.name + i.version);
     this.imports.length = 0;
     this.imports.push(...imports);
-    
+
     //Unify Layouts
     if (this.props.layouts) {
       this.directive.document.layouts = Object.assign(this.props.layouts, this.layouts);
@@ -153,7 +153,7 @@ export class APL extends SkillResponsePart<APLProps> {
     if (!APL.packageVersion) {
       const packageInfo = __dirname.includes('dist')
         ? require('../../../../../package.json')
-        : require('../../../../../package.json');
+        : require('../../../../package.json');
       APL.packageVersion = `${packageInfo.name}/${packageInfo.version}`;
       UserAgentManager.registerComponent(APL.packageVersion);
     }
