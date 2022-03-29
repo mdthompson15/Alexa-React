@@ -1,6 +1,6 @@
 {
-  "name": "ask-sdk-jsx-for-apl",
-  "version": "1.0.0-beta.5",
+  "name": "alexa-react",
+  "version": "1.0.1",
   "description": "JSX for APL is a React-based APL templating framework that allows developers to define APL document within the code.",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexa-labs/ask-sdk-jsx-for-apl.git"
+    "url": "git+https://github.com/alexa-labs/ask-sdk-jsx-for-apl.git"
   },
   "dependencies": {
     "lodash": "^4.17.11"
@@ -19,7 +19,7 @@
   "devDependencies": {
     "@types/jest": "^26.0.0",
     "@types/lodash": "^4.14.116",
-    "@types/react": "^16.8.18",
+    "@types/react": "^17.0.37",
     "@types/react-dom": "^16.8.4",
     "ask-sdk": "2.10.0",
     "ask-sdk-core": "2.10.1",
@@ -38,9 +38,9 @@
     "typescript": "^3.5.1"
   },
   "peerDependencies": {
-    "ask-sdk": "^2.1.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "ask-sdk": "^2.8.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "scripts": {
     "test": "npm run build && jest",
@@ -60,5 +60,12 @@
     "alexa-layouts.d.ts",
     "!dist/test"
   ],
-  "author": ""
+  "author": "",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "keywords": [
+    "alexa"
+  ]
 }
