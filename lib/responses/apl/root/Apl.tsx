@@ -153,7 +153,7 @@ export class APL extends SkillResponsePart<APLProps> {
     if (!APL.packageVersion) {
       const packageInfo = __dirname.includes('dist')
         ? require('../../../../../package.json')
-        : require('../../../../package.json');
+        : require('../../../../../package.json');
       APL.packageVersion = `${packageInfo.name}/${packageInfo.version}`;
       UserAgentManager.registerComponent(APL.packageVersion);
     }
