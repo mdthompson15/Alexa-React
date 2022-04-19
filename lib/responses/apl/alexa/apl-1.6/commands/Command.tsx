@@ -36,7 +36,7 @@ import {
   ISetValueCommand,
   ISpeakItemCommand,
   ISpeakListCommand,
-} from './';
+} from '.';
 export type Command =
   | IAnimateItemCommand
   | IAutoPageCommand

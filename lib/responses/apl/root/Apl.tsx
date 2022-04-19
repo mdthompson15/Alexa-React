@@ -17,7 +17,7 @@
 import React from 'react';
 import uniqBy from 'lodash/uniqBy';
 import { SkillResponsePart } from '../../skill-response';
-import { Command } from '../alexa/apl-1.4/commands'
+import { Command } from '../alexa/apl-1.6/commands'
 import {
   ResponseBuilderCtx,
   APLProvider,
