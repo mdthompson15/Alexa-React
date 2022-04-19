@@ -30,7 +30,7 @@ import {
 import { ResponseBuilder } from 'ask-sdk-core';
 import { UserAgentManager } from 'ask-sdk-runtime';
 
-const APLVersion = '1.4';
+const APLVersion = '1.6';
 
 export interface APLDocument {
   type: 'APL';

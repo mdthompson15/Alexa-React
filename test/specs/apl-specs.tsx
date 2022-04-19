@@ -77,7 +77,7 @@ export const lightThemeSpec: APLSpec = (getter) => {
 };
 
 export const versionSpec: APLSpec = (getter) => {
-  expect(getter(<APL />).version).toEqual("1.4");
+  expect(getter(<APL />).version).toEqual("1.6");
 };
 
 export const containerAndTextSpec: APLSpec = getter => {
