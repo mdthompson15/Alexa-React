@@ -33,6 +33,7 @@ export * from './AlexaImageListItemInnerComponent';
 export * from './AlexaImageListItem';
 export * from './AlexaMultiRatingItem';
 export * from './AlexaSingleRatingItem';
+export * from './AlexaProgressBar';
 export * from './AlexaRating';
 export * from './AlexaTextList';
 export * from './AlexaPaginatedListItem';

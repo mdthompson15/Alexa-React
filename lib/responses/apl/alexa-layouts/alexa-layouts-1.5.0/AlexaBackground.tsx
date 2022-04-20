@@ -42,6 +42,8 @@ export interface AlexaBackgroundProps {
   videoAutoPlay?: boolean | string;
   /* Audio track to play on. Defaults to foreground. EM can select foreground | background | none. */
   videoAudioTrack?: string;
+  /* Array of entity data to bind to this component. */
+  entities?: any[];
   [key: string]: unknown;
 }
 export const AlexaBackground = (
