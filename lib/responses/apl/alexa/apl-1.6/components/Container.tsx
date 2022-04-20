@@ -122,6 +122,8 @@ export interface ContainerProps {
   maxHeight?: dimension;
   /* Opacity of this component.  Also applies to children. */
   opacity?: number | string;
+  /* Space to add on the sides of the component. */
+  padding?: dimension;
   /* Space to add to the left of this object. */
   paddingLeft?: dimension;
   /* Space to add to the top this object. */
@@ -130,6 +132,10 @@ export interface ContainerProps {
   paddingRight?: dimension;
   /* Space to add to the bottom of this object. */
   paddingBottom?: dimension;
+  /* Space to add to the start edge of this component */
+  paddingStart?: dimension;
+  /* Space to add to the end edge of this component. */
+  paddingEnd?: dimension
   /* A text string used by a screen reader when the user selects accessibility mode. */
   accessibilityLabel?: string;
   /* Data to bind into this container.  This should be an array of data items. Each item will be bound to the 'data' global variable and the 'item' component will be inflated using that data item.  The 'index' global variable will be assigned the 0-based array offset of the item. The 'ordinal' global variable will be assigned for each 'numbered' child */

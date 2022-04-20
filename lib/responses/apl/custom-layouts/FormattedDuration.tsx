@@ -16,24 +16,26 @@
 
 import omit from 'lodash/omit';
 import * as React from 'react';
-import { APLImports } from '../../root';
-import { BaseComponent } from '../../common';
-const imports = [{ name: 'alexa-layouts', version: '1.5.0' }];
-export interface AlexaDividerProps {
-  /* Array of entity data to bind to this component. */
-  entities?: any[];
-  /* Colors will be swiched depend on the specified theme (light/dark). Default to dark theme */
-  theme?: "light" | "dark";
+import { Text } from '../alexa/apl-1.6/components';
+import { BaseComponent } from '../common';
+import { APLImports, AplLayout } from '../root';
+
+const imports = [{ name: 'alexa-layouts', version: '1.5.0' }, { name: "alexa-styles", version: "1.1.0"}];
+export interface FormattedDurationProps {
+  seconds: string;
   [key: string]: unknown;
 }
-export const AlexaDivider = (
-  props: React.PropsWithChildren<AlexaDividerProps>
+export const FormattedDuration = (
+  props: React.PropsWithChildren<FormattedDurationProps>
 ) => {
   return (
     <>
       <APLImports imports={imports} />
+      <AplLayout name="FormattedDuration" seconds={0} format={"${seconds >= 3600 ? 'HH:mm:ss' : 'mm:ss'}"}>
+        <Text fontSize={"${@fontSizeXSmall}"} text="${Time.format(format, seconds)}"/>
+      </AplLayout>
       <BaseComponent
-        definition={{ type: 'AlexaDivider', ...omit(props, ['children']) }}>
+        definition={{ type: 'FormattedDuration', ...omit(props, ['children']) }}>
         {props.children}
       </BaseComponent>
     </>

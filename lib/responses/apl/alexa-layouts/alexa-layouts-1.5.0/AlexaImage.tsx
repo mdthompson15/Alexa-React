@@ -18,8 +18,9 @@ import omit from 'lodash/omit';
 import * as React from 'react';
 import { APLImports } from '../../root';
 import { BaseComponent } from '../../common';
-const imports = [{ name: 'alexa-layouts', version: '1.1.0' }];
+const imports = [{ name: 'alexa-layouts', version: '1.5.0' }];
 export interface AlexaImageProps {
+  entities?: any[];
   /* Dimension value to set image width */
   imageWidth?: string;
   /* Dimension value to set image height */
@@ -34,6 +35,7 @@ export interface AlexaImageProps {
   imageRoundedCorner?: boolean | string;
   /* Set a blurred version of the image to appear behind the image to create a visually consistent container size */
   imageBlurredBackground?: boolean | string;
+  imageShadow?: boolean | string;
   /* URI for the image */
   imageSource?: string;
   [key: string]: unknown;

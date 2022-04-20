@@ -18,10 +18,21 @@ import omit from 'lodash/omit';
 import * as React from 'react';
 import { APLImports } from '../../root';
 import { BaseComponent } from '../../common';
+import { Command } from '../../alexa/apl-1.6/commands';
 const imports = [{ name: 'alexa-layouts', version: '1.1.0' }];
 export interface AlexaTransportControlsProps {
+  accessibilityLabel?: string;
+  entities?: any[];
+  primaryControlPauseAction?: Command;
+  primaryControlPlayAction?: Command;
+  secondaryControlsAVGLeft?: string;
+  secondaryControlAVGRight?: string;
+  secondaryControlsLeftAccessibilityLabel?: string;
+  secondaryControlsLeftAction?: Command;
+  secondaryControlsRightAccessibilityLabel?: string;
+  secondaryControlsRightAction?: Command;
   /* The type of secondary controls to use. Default is skip (foward and backwards). Valid options are skip | jump10 | jump30 | none */
-  secondaryControls?: string;
+  secondaryControls?: "skip" | "jump10" | "jump30" | "none"
   /* The height and width for the primary button. */
   primaryControlSize?: string;
   /* The height and width for the secondary buttons. */
@@ -32,6 +43,7 @@ export interface AlexaTransportControlsProps {
   autoplay?: boolean | string;
   /* Optional id to set on the Play/Pause Toggle Button. This is useful when displaying mutiple Videos on one screen, each with their own transport controls. */
   playPauseToggleButtonId?: string;
+  theme?: "light" | "dark"
   [key: string]: unknown;
 }
 export const AlexaTransportControls = (

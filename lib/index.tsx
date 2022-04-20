@@ -16,6 +16,8 @@
 
 export * from './responses/apl/alexa/apl-1.6/components';
 export * from './responses/apl/alexa/apl-1.6/commands';
+export * from './responses/apl/alexa-layouts/alexa-layouts-1.5.0';
+export * from './responses/apl/custom-layouts';
 export * from './responses/apl/root';
 export * from './responses/apl/common';
 export * from './responses/apl-document';

@@ -1,6 +1,6 @@
 {
   "name": "alexa-react",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "JSX for APL is a React-based APL templating framework that allows developers to define APL document within the code.",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",

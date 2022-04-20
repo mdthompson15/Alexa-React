@@ -18,27 +18,33 @@ import omit from 'lodash/omit';
 import * as React from 'react';
 import { APLImports } from '../../root';
 import { BaseComponent } from '../../common';
+import { Command } from '../../alexa/apl-1.6/commands';
 const imports = [{ name: 'alexa-layouts', version: '1.5.0' }];
-export interface AlexaFooterProps {
-  /* Hint text to display in Footer. */
-  hintText?: string;
+export interface AlexaProgressDotsProps {
+  accessibilityLabel?: string;
   /* Colors will be swiched depend on the specified theme (light/dark). Default to dark theme */
   theme?: "light" | "dark";
-  /* Array of entity data to bind to this component. */
+  /* Array of entity data bind to this layout */
   entities?: any[];
-  lang?: string;
-  /* Specifies the layout direction for the button. Set this property to either LTR (left-to-right) or RTL (right-to-left). When not set, this property inherits the layoutDirection specified in the parent component. */
-  layoutDirection?: "LTR" | "RTL";
+  /* The action to trigger when the user selects the radio button. */
+  primaryAction?: Command;
+  /* Fill color to use for the radio button when it is selected (checked is true). */
+  radioButtonColor?: string;
+  /* Height of the radio button */
+  radioButtonHeight?: number | string;
+  /* Width of the radio button */
+  radioButtonWidth?: number | string;
+  /* Allow for unknown properties */
   [key: string]: unknown;
 }
-export const AlexaFooter = (
-  props: React.PropsWithChildren<AlexaFooterProps>
+export const AlexaRadioButton = (
+  props: React.PropsWithChildren<AlexaProgressDotsProps>
 ) => {
   return (
     <>
       <APLImports imports={imports} />
       <BaseComponent
-        definition={{ type: 'AlexaFooter', ...omit(props, ['children']) }}>
+        definition={{ type: 'AlexaRadioButton', ...omit(props, ['children']) }}>
         {props.children}
       </BaseComponent>
     </>

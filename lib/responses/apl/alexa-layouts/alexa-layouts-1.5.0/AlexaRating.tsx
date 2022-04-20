@@ -18,8 +18,13 @@ import omit from 'lodash/omit';
 import * as React from 'react';
 import { APLImports } from '../../root';
 import { BaseComponent } from '../../common';
-const imports = [{ name: 'alexa-layouts', version: '1.1.0' }];
+const imports = [{ name: 'alexa-layouts', version: '1.5.0' }];
 export interface AlexaRatingProps {
+  accessibilityLabel?: string;
+  /* Array of entity data bind to this layout */
+  entities?: any[];
+  /* Specifies the layout direction for the button. Set this property to either LTR (left-to-right) or RTL (right-to-left). When not set, this property inherits the layoutDirection specified in the parent component. */
+  layoutDirection?: "LTR" | "RTL";
   /* Colors will be switched depending on the specified theme (light/dark). Default to dark theme */
   theme?: string;
   /* The adjustable padding between rating item */
@@ -42,6 +47,8 @@ export interface AlexaRatingProps {
   emptyRatingGraphic?: any;
   /* The text shown besides the rating */
   ratingText?: string;
+  /* The opacity of the text shown next to the rating. Set to a number between 0 and 1. */
+  ratingTextOpacity?: number | string;
   [key: string]: unknown;
 }
 export const AlexaRating = (

@@ -18,10 +18,15 @@ import omit from 'lodash/omit';
 import * as React from 'react';
 import { APLImports } from '../../root';
 import { BaseComponent } from '../../common';
-const imports = [{ name: 'alexa-layouts', version: '1.1.0' }];
+const imports = [{ name: 'alexa-layouts', version: '1.5.0' }];
 export interface AlexaHeaderProps {
   /* Colors will be swiched depend on the specified theme (light/dark). Default to dark theme */
-  theme?: string;
+  theme?: "light" | "dark";
+  /* Array of entity data to bind to this component. */
+  entities?: any[];
+  lang?: string;
+  /* Specifies the layout direction for the button. Set this property to either LTR (left-to-right) or RTL (right-to-left). When not set, this property inherits the layoutDirection specified in the parent component. */
+  layoutDirection?: "LTR" | "RTL";
   /* Primary text to render in header. */
   headerTitle?: string;
   /* Secondary text to render in header. */
@@ -30,6 +35,8 @@ export interface AlexaHeaderProps {
   headerAttributionText?: string;
   /* URL for attribution image source. Only shown when headerAttributionPrimacy is true, or on a device that shows Title/Subtitle and Attribution. */
   headerAttributionImage?: string;
+  /* The opacity of the attribution text and attribution image. Set to a number between 0 and 1. */
+  headerAttributionOpacity?: number | string;
   /* On devices that can only display one element due to screen size, Attribution is prioritized. Setting False displays Title/Subtitle.  Defaults to true. */
   headerAttributionPrimacy?: boolean | string;
   /* Toggle to display the divider that appears at the bottom of header to help separate it from the content below. Default to false */

@@ -18,27 +18,36 @@ import omit from 'lodash/omit';
 import * as React from 'react';
 import { APLImports } from '../../root';
 import { BaseComponent } from '../../common';
+import { Command } from '../../alexa/apl-1.6/commands';
+
+type dimension = string | number;
+
 const imports = [{ name: 'alexa-layouts', version: '1.5.0' }];
-export interface AlexaFooterProps {
-  /* Hint text to display in Footer. */
-  hintText?: string;
-  /* Colors will be swiched depend on the specified theme (light/dark). Default to dark theme */
-  theme?: "light" | "dark";
+export interface AlexaCheckboxProps {
   /* Array of entity data to bind to this component. */
   entities?: any[];
-  lang?: string;
-  /* Specifies the layout direction for the button. Set this property to either LTR (left-to-right) or RTL (right-to-left). When not set, this property inherits the layoutDirection specified in the parent component. */
-  layoutDirection?: "LTR" | "RTL";
+  /* Colors will be swiched depend on the specified theme (light/dark). Default to dark theme */
+  theme?: "light" | "dark";
+  /* A string describing the check box. Voice over reads this string when the user selects the button. */
+  accessibilityLabel?: string;
+  /* Height of the check box */
+  checkboxHeigh?: dimension;
+  /* Width of the check box */
+  checkboxWidth?: dimension;
+  /* The action to trigger when the user selects the check box. */
+  primaryAction?: Command;
+  /* Fill color to use for the check box when it is selected (when checked is true). */
+  selectedColor?: string;
   [key: string]: unknown;
 }
-export const AlexaFooter = (
-  props: React.PropsWithChildren<AlexaFooterProps>
+export const AlexaCheckbox = (
+  props: React.PropsWithChildren<AlexaCheckboxProps>
 ) => {
   return (
     <>
       <APLImports imports={imports} />
       <BaseComponent
-        definition={{ type: 'AlexaFooter', ...omit(props, ['children']) }}>
+        definition={{ type: 'AlexaCheckbox', ...omit(props, ['children']) }}>
         {props.children}
       </BaseComponent>
     </>

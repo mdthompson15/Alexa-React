@@ -19,7 +19,7 @@ import * as React from 'react';
 import { APLImports } from '../../root';
 import { BaseComponent } from '../../common';
 const imports = [{ name: 'alexa-layouts', version: '1.5.0' }];
-export interface AlexaProgressBarProps {
+export interface AlexaProgressBarRadialProps {
   /* Specifies the layout direction for the button. Set this property to either LTR (left-to-right) or RTL (right-to-left). When not set, this property inherits the layoutDirection specified in the parent component. */
   layoutDirection?: "LTR" | "RTL";
   /* Progress bar type between determinate and indeterminate. Indeterminate is an ambient progress bar with animation. Determinate is a progress bar as content progresses. Default is determinate*/
@@ -43,14 +43,14 @@ export interface AlexaProgressBarProps {
   /* Allow for unknown properties */
   [key: string]: unknown;
 }
-export const AlexaProgressBar = (
-  props: React.PropsWithChildren<AlexaProgressBarProps>
+export const AlexaProgressBarRadial = (
+  props: React.PropsWithChildren<AlexaProgressBarRadialProps>
 ) => {
   return (
     <>
       <APLImports imports={imports} />
       <BaseComponent
-        definition={{ type: 'AlexaProgressBar', ...omit(props, ['children']) }}>
+        definition={{ type: 'AlexaProgressBarRadial', ...omit(props, ['children']) }}>
         {props.children}
       </BaseComponent>
     </>

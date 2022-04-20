@@ -14,4 +14,4 @@
   limitations under the License.
 */
 
-module.exports = require('./dist/lib/responses/apl/alexa-layouts/alexa-layouts-1.1.0');
+module.exports = require('./dist/lib/responses/apl/alexa-layouts/alexa-layouts-1.5.0');

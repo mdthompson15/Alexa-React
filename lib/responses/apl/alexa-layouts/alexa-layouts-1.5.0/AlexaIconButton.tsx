@@ -18,10 +18,12 @@ import omit from 'lodash/omit';
 import * as React from 'react';
 import { APLImports } from '../../root';
 import { BaseComponent } from '../../common';
-const imports = [{ name: 'alexa-layouts', version: '1.1.0' }];
+const imports = [{ name: 'alexa-layouts', version: '1.5.0' }];
 export interface AlexaIconButtonProps {
-  /* Colors will be swiched depending on the specified theme (light/dark). Defaults to dark theme. */
-  theme?: string;
+  /* Colors will be swiched depend on the specified theme (light/dark). Default to dark theme */
+  theme?: "light" | "dark";
+  /* Array of entity data to bind to this component. */
+  entities?: any[];
   /* The command that is triggered when the button is selected. */
   primaryAction?: any;
   /* Voice over will read this string when the user selects this component. */

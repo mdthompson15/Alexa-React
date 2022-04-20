@@ -20,7 +20,7 @@ import { ResponseBuilder } from "ask-sdk-core";
 import { UserAgentManager } from "ask-sdk-runtime";
 import { render } from 'enzyme';
 import { mockResponseBuilder } from "../../utils/response-builder";
-import { AlexaLists } from "../../../lib/responses/apl/alexa-layouts/alexa-layouts-1.1.0";
+import { AlexaLists } from "../../../lib/responses/apl/alexa-layouts/alexa-layouts-1.5.0";
 
 import { Consumer } from "react";
 import Mocked = jest.Mocked;

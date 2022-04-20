@@ -18,27 +18,26 @@ import omit from 'lodash/omit';
 import * as React from 'react';
 import { APLImports } from '../../root';
 import { BaseComponent } from '../../common';
+import { Command } from '../../alexa/apl-1.6/commands';
 const imports = [{ name: 'alexa-layouts', version: '1.5.0' }];
-export interface AlexaFooterProps {
-  /* Hint text to display in Footer. */
-  hintText?: string;
-  /* Colors will be swiched depend on the specified theme (light/dark). Default to dark theme */
-  theme?: "light" | "dark";
-  /* Array of entity data to bind to this component. */
+export interface AlexaSwitchProps {
+  accessibilityLabel?: string;
+  activeColor?: string;
   entities?: any[];
-  lang?: string;
-  /* Specifies the layout direction for the button. Set this property to either LTR (left-to-right) or RTL (right-to-left). When not set, this property inherits the layoutDirection specified in the parent component. */
-  layoutDirection?: "LTR" | "RTL";
-  [key: string]: unknown;
+  layoutDirection?: "RTL" | "LTR";
+  primaryAction?: Command;
+  switchHeight?: number | string;
+  switchWidth?: number | string;
+  theme?: "light" | "dark"
 }
-export const AlexaFooter = (
-  props: React.PropsWithChildren<AlexaFooterProps>
+export const AlexaSwitch = (
+  props: React.PropsWithChildren<AlexaSwitchProps>
 ) => {
   return (
     <>
       <APLImports imports={imports} />
       <BaseComponent
-        definition={{ type: 'AlexaFooter', ...omit(props, ['children']) }}>
+        definition={{ type: 'AlexaSwitch', ...omit(props, ['children']) }}>
         {props.children}
       </BaseComponent>
     </>

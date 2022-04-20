@@ -18,18 +18,25 @@ import omit from 'lodash/omit';
 import * as React from 'react';
 import { APLImports } from '../../root';
 import { BaseComponent } from '../../common';
-const imports = [{ name: 'alexa-layouts', version: '1.1.0' }];
+const imports = [{ name: 'alexa-layouts', version: '1.5.0' }];
 export interface AlexaButtonProps {
   /* Colors will be swiched depend on the specified theme (light/dark). Default to dark theme */
   theme?: string;
   /* The text string should communicate the action the customer can take. */
   buttonText?: string;
   /* An EM can choose outlined or contained. Defaults to contained. */
-  buttonStyle?: string;
+  buttonStyle?: "contained" | "outlined" | "ingress" | "egress";
   /* The action that is triggered when the Button is selected. */
   primaryAction?: any;
   /* Voice over will read this string when the user selects this component. */
   accessibilityLabel?: string;
+  /* Array of entity data to bind to this component. */
+  entities?: any[];
+  lang?: string;
+  /* Specifies the layout direction for the button. Set this property to either LTR (left-to-right) or RTL (right-to-left). When not set, this property inherits the layoutDirection specified in the parent component. */
+  layoutDirection?: "LTR" | "RTL";
+  /* When true, use the 'touch-forward' text style for the button text. This style displays the button text without italics. When false, assume the user is interacting with the button by voice and use the default 'voice-enabled' text style. */
+  touchForward?: boolean;
   [key: string]: unknown;
 }
 export const AlexaButton = (

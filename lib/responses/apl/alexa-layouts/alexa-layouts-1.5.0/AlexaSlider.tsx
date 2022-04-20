@@ -18,27 +18,44 @@ import omit from 'lodash/omit';
 import * as React from 'react';
 import { APLImports } from '../../root';
 import { BaseComponent } from '../../common';
+import { Command } from '../../alexa/apl-1.6/commands';
 const imports = [{ name: 'alexa-layouts', version: '1.5.0' }];
-export interface AlexaFooterProps {
-  /* Hint text to display in Footer. */
-  hintText?: string;
-  /* Colors will be swiched depend on the specified theme (light/dark). Default to dark theme */
-  theme?: "light" | "dark";
-  /* Array of entity data to bind to this component. */
+export interface AlexaSliderProps {
+  sliderId: string;
+  accessibilityLabel?: string;
+  bufferValue?: number | string;
   entities?: any[];
-  lang?: string;
-  /* Specifies the layout direction for the button. Set this property to either LTR (left-to-right) or RTL (right-to-left). When not set, this property inherits the layoutDirection specified in the parent component. */
+  handleKeyDownCommand?: any[];
+  iconLeftGraphicSource?: string;
+  iconRightGraphicSource?: string;
+  isLoading?: boolean;
   layoutDirection?: "LTR" | "RTL";
-  [key: string]: unknown;
+  metadataDisplayed?: boolean;
+  metadataPosition?: "above_right" | "above_left_right" | "below_left_right";
+  onBlurCommand?: Command[];
+  onDownCommand?: Command[];
+  onFocusCommand?: Command[];
+  onMoveCommand?: Command[];
+  onUpCommand?: Command[];
+  positionPropertyName?: string;
+  progressFillColor?: string;
+  progressValue?: number | string;
+  sliderMoveMillisecond?: number | string;
+  sliderSize?: string;
+  sliderType?: string;
+  theme?: "light" | "dark";
+  thumbColor?: string;
+  thumbDisplayedAllStates?: boolean;
+  totalValue?: number | string;
 }
-export const AlexaFooter = (
-  props: React.PropsWithChildren<AlexaFooterProps>
+export const AlexaSlider = (
+  props: React.PropsWithChildren<AlexaSliderProps>
 ) => {
   return (
     <>
       <APLImports imports={imports} />
       <BaseComponent
-        definition={{ type: 'AlexaFooter', ...omit(props, ['children']) }}>
+        definition={{ type: 'AlexaSlider', ...omit(props, ['children']) }}>
         {props.children}
       </BaseComponent>
     </>

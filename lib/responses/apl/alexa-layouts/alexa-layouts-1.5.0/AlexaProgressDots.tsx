@@ -19,26 +19,25 @@ import * as React from 'react';
 import { APLImports } from '../../root';
 import { BaseComponent } from '../../common';
 const imports = [{ name: 'alexa-layouts', version: '1.5.0' }];
-export interface AlexaFooterProps {
-  /* Hint text to display in Footer. */
-  hintText?: string;
+export interface AlexaProgressDotsProps {
+  accessibilityLabel?: string;
+  componentId?: string;
+  dotSize?: number | string;
   /* Colors will be swiched depend on the specified theme (light/dark). Default to dark theme */
   theme?: "light" | "dark";
-  /* Array of entity data to bind to this component. */
+  /* Array of entity data bind to this layout */
   entities?: any[];
-  lang?: string;
-  /* Specifies the layout direction for the button. Set this property to either LTR (left-to-right) or RTL (right-to-left). When not set, this property inherits the layoutDirection specified in the parent component. */
-  layoutDirection?: "LTR" | "RTL";
+  /* Allow for unknown properties */
   [key: string]: unknown;
 }
-export const AlexaFooter = (
-  props: React.PropsWithChildren<AlexaFooterProps>
+export const AlexaProgressDots = (
+  props: React.PropsWithChildren<AlexaProgressDotsProps>
 ) => {
   return (
     <>
       <APLImports imports={imports} />
       <BaseComponent
-        definition={{ type: 'AlexaFooter', ...omit(props, ['children']) }}>
+        definition={{ type: 'AlexaProgressDots', ...omit(props, ['children']) }}>
         {props.children}
       </BaseComponent>
     </>

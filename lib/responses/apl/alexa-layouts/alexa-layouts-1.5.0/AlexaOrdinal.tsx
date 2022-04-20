@@ -18,12 +18,14 @@ import omit from 'lodash/omit';
 import * as React from 'react';
 import { APLImports } from '../../root';
 import { BaseComponent } from '../../common';
-const imports = [{ name: 'alexa-layouts', version: '1.1.0' }];
+const imports = [{ name: 'alexa-layouts', version: '1.5.0' }];
 export interface AlexaOrdinalProps {
   /* Colors will be swiched depend on the specified theme (light/dark). Default to dark theme */
-  theme?: string;
+  theme?: "light" | "dark";
   /* Number of the item in the list. Defaults to ${ordinal} */
   ordinalText?: string;
+  /* Array of entity data to bind to this component. */
+  entities?: any[];
   [key: string]: unknown;
 }
 export const AlexaOrdinal = (
