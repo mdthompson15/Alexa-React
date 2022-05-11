@@ -19,6 +19,7 @@ import { APLComponentProvider, MainTemplateConsumer } from '../common/context';
 
 export interface MainTemplateProps {
   parameters?: string[];
+  children?: JSX.Element | JSX.Element[];
 }
 
 export class MainTemplate extends React.Component<MainTemplateProps> {

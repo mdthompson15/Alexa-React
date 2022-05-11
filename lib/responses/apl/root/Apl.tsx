@@ -81,6 +81,7 @@ interface APLProps {
   styles?: object;
   export?: object;
   graphics?: object;
+  children?: JSX.Element;
 }
 
 export class APL extends SkillResponsePart<APLProps> {
